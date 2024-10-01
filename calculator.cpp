@@ -25,4 +25,5 @@ int main() {
     double result3 = calc.Mul(5.1);
 
     return 0;
+
 }
