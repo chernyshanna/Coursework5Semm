@@ -1,16 +1,28 @@
 #include "calculator.h"
 
-int Calculator::Add(double a, double b)
-{
-    return a + b + 0.5;
+class Calculator {
+    int Calculator::Add(double a, double b)
+    {
+        return round(a + b);
+    }
+
+    int Calculator::Sub(double a, double b)
+    {
+        return round(Add(a, -b));
+    }
+
+    int Calculator::Mul(double b)
+    {
+        return round(9 * b);
+    }
 }
 
-int Calculator::Sub(double a, double b)
-{
-    return Add(a, -b);
-}
+int main() {
+    Calculator calc;
 
-int Calculator::Mul (double a, double b)
-{
-    return a * b + 0.5;
+    double result1 = calc.Add(5.1, 8.9);
+    double result2 = calc.Sub(5.1, 8.9);
+    double result3 = calc.Mul(5.1);
+
+    return 0;
 }
